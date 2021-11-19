@@ -1,0 +1,82 @@
+{
+  "app": {
+    "bundleName": "com.myapps.wearenginepractices",
+    "vendor": "myapps",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.myapps.wearenginepractices",
+    "metaData": {
+      "customizeData": [
+        {
+          "name": "hwc-theme",
+          "value": "androidhwext:style/Theme.Emui.Dark.NoActionBar"
+        },
+        {
+          "name": "supportLists",
+          "value": "com.myapps.wearenginepractice:28D47989C2AAC2857CCC86AD73AAB5B48E68EA99DA48F64878741AF3978B5735",
+          "extra": ""
+        }
+      ]
+    },
+    "name": ".MyApplication",
+    "mainAbility": "com.myapps.wearenginepractices.MainAbility",
+    "deviceType": [
+      "wearable"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": false
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "portrait",
+        "name": "com.myapps.wearenginepractices.MainAbility",
+        "icon": "$media:icon",
+        "label": "$string:app_name",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "name": "com.myapps.wearenginepractices.slice.ArticleDetailAbility",
+        "type": "page"
+      }
+    ],
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.INTERNET",
+        "usedScene": {
+          "ability": [
+            "com.minkiapps.newspaper.test.slice.MainAbilitySlice"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.VIBRATE",
+        "usedScene": {
+          "ability": [
+            "com.minkiapps.newspaper.test.slice.MainAbilitySlice"
+          ],
+          "when": "inuse"
+        }
+      }
+    ]
+  }
+}

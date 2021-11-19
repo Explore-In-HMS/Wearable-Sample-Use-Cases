@@ -1,0 +1,59 @@
+apply plugin: 'com.huawei.ohos.hap'
+apply plugin: 'com.huawei.ohos.decctest'
+//For instructions on signature configuration, see https://developer.harmonyos.com/en/docs/documentation/doc-guides/ide_debug_device-0000001053822404#EN-US_TOPIC_0000001154985555__section1112183053510
+ohos {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\m00599114\\Desktop\\WearEnginePractice\\WearEnginePractice.p12')
+            storePassword '0000002267FDF0DEE95B41F2A3B3999E1D354CD3E732F68DD212CE4C0117442B1A26BFC0DEFCE0EFEDC22BBD75991ADF0D8D'
+            keyAlias = 'WearEnginePractice'
+            keyPassword '00000022E4AFBFC95AC277CBFD062CC269CC683089B3AF7B724D8A35490FE15D1403E3C22025710652FD1F4FDEF687ED98C9'
+            signAlg = 'SHA256withECDSA'
+            profile file('C:\\Users\\m00599114\\Desktop\\WearEnginePractice\\WearEnginePracticeDebug.p7b')
+            certpath file('C:\\Users\\m00599114\\Desktop\\WearEnginePractice\\WearEnginePractice.cer')
+        }
+    }
+    compileSdkVersion 5
+    defaultConfig {
+        compatibleSdkVersion 4
+    }
+    buildTypes {
+        release {
+            proguardOpt {
+                proguardEnabled false
+                rulesFiles 'proguard-rules.pro'
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
+
+    // Retrofit
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.5.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation "com.squareup.retrofit2:converter-moshi:2.6.0"
+
+    // Glide
+    implementation 'io.openharmony.tpc.thirdlib:glide:1.0.6'
+
+    // ProgressView
+    implementation 'io.openharmony.tpc.thirdlib:CircularProgressView:1.0.1'
+
+    // Wear Engine
+    implementation 'com.huawei.hms:wearengine-wearable-harmonyos:5.0.2.302'
+
+    // StringUtils
+    implementation 'org.apache.commons:commons-text:1.7'
+
+    // ZXing
+    implementation 'io.openharmony.tpc.thirdlib:BGAQRCode-zxing:1.0.4'
+
+    testImplementation 'junit:junit:4.13'
+    ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.100'
+}
+decc {
+    supportType = ['html', 'xml']
+}

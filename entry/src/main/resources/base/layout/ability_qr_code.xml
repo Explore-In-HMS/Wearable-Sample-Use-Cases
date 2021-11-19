@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:id="$+id:entry_dl"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="horizontal_center">
+
+    <Text
+        ohos:id="$+id:qr_code_title"
+        ohos:width="match_content"
+        ohos:height="60vp"
+        ohos:top_margin="10vp"
+        ohos:text_color="#000000"
+        ohos:text="QR Code"
+        ohos:text_size="16vp"/>
+
+    <Image
+        ohos:id="$+id:qr_code"
+        ohos:height="160fp"
+        ohos:width="160"
+        ohos:image_src="$media:icon"
+        ohos:top_margin="8vp">
+    </Image>
+
+</DirectionalLayout>
